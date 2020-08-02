@@ -12,8 +12,40 @@ body{
     
 }
 
+.main-content{
+    text-align: center;
+    }
+
 .custom-link{
+    
     font-size: 20px;
+    font-weight: bold;
+    font-family: 'Fredoka One', cursive;
+    margin-left: 5px;
+}
+
+.collapse:not(.show){
+    display: contents;
+}
+
+$button-color: #9966CC;
+
+.btn-outline-success{
+    background-color: $button-color !important;
+    border-color: white;
+    color: white !important;
+    border-width: 2px;
+}
+
+.btn-outline-success:hover{
+    
+
+    color: #6699CC !important;
+    border-color: $button-color !important;
+}
+
+.bg-custom-color{
+    background-color: #6699CC !important;
 }
 
 
