@@ -1,7 +1,7 @@
 @import 'bootstrap';
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
-.logoGram {
+/* .logoGram {
     font-family: 'Fredoka One', cursive;
     font-size: 36px;
 }
@@ -47,6 +47,34 @@ $button-color: #9966CC;
 .bg-custom-color{
     background-color: #6699CC !important;
 }
+ */
 
+.starter-logo{
+     font-size: 36px;
+     font-family: 'Pacifico', cursive;
+}
+
+.main{
+     width: 70vw;
+     margin: 0 auto;
+     display: flex;
+     flex-direction: column;
+}
+
+.custom-nav{
+    border-bottom: 1px solid grey;
+}
+
+.custom-nav-links{
+    flex-direction: row-reverse;
+}
+
+.collapse:not(.show){
+    display: contents;
+}
+
+.main-content{
+    text-align: center;
+}
 
 
