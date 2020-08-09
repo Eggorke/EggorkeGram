@@ -5,9 +5,4 @@ class IndexController < ApplicationController
   def about
 
   end
-
-  def login
-  
-  end
-
 end
