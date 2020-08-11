@@ -19,6 +19,9 @@ gem 'bootstrap', '~> 4.5.0'
 gem 'jquery-rails'
 gem 'devise'
 gem "shrine", "~> 3.0"
+gem "image_processing"
+gem "mini_magick", ">= 4.3.5"
+gem 'fastimage'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
