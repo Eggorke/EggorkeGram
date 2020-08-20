@@ -75,6 +75,18 @@ $button-color: #9966CC;
 
 .main-content{
     text-align: center;
+    display: flex;
+}
+
+.info{
+    width: 25%;
+    border: 1px solid black;
+    margin-left: auto;
+    
+}
+
+.content{
+    width: 75%;
 }
 
 .nav-link{
@@ -100,5 +112,10 @@ $button-color: #9966CC;
 
 .alert-notice{
     background-color: rgba(147, 224, 140, 0.349) !important;
+}
+
+.img-post-feed{
+    max-width: 300px;
+    max-height: 300px;
 }
 
