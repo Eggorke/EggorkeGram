@@ -1,9 +1,13 @@
-<div class="main-content">
-    <% if user_signed_in? %>
-        <% @posts.each do |p| %>
-            <% if p.user_id == current_user.id %>
-                <%= link_to (image_tag p.image_url, class: "img-post-feed"), p %>
+    <div class="content">    
+        <% if user_signed_in? %>
+            
+            <% @posts.each do |p| %>
+                <% if p.image_data? %>
+                    <% if p.user_id == current_user.id %>
+                    <%= link_to (image_tag p.image_url, class: "img-post-feed"), p %>
+                    <% end %>
+                <% end %>
             <% end %>
         <% end %>
-    <% end %>
-</div>
+    </div>
+    

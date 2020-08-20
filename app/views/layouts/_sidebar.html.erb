@@ -1,0 +1,7 @@
+<% if user_signed_in? %>
+    <div class="info sticky">
+        <p>User info</p>
+        <p>Username: <%= current_user.name %> </p>
+        <p>Email: <%= current_user.email %> </p>
+    </div>
+<% end %>

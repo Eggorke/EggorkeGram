@@ -1,8 +1,11 @@
 
 <% @posts.each do |p| %>
     
-    <p> <%= p.user.name %> </p>
-    <div><%= link_to (image_tag p.image_url, :class => "img-post-feed"), p %></div>
-    <p> <%= p.title %> </p>
+    <% if p.image_data? %>
+        <p> <%= p.user.name %> </p>
+        <div><%= link_to (image_tag p.image_url, :class => "img-post-feed"), p %></div>
+        <p> <%= p.title %> </p>
+    <% end %>
     
 <% end %>
+

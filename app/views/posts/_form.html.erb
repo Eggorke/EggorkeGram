@@ -1,11 +1,15 @@
 <%= form_for @post do |f| %>
     
-
+    <%= f.hidden_field :image, value: @post.cached_image_data %>
     <%= f.label :title %>
     <%= f.text_field :title %>
 
     <%= f.label :image %>
     <%= f.file_field :image %>
+
+
+    
+
 
     <%= f.submit %>
 
