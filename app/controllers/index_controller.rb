@@ -3,7 +3,5 @@ class IndexController < ApplicationController
     @posts = Post.all
   end
 
-  def about
-
-  end
+  
 end
