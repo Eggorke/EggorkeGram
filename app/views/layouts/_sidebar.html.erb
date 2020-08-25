@@ -3,5 +3,9 @@
         <p>User info</p>
         <p>Username: <%= current_user.name %> </p>
         <p>Email: <%= current_user.email %> </p>
+        <p>Avatar:</p>
+        <% if current_user.image_data? %>
+            <div class="avatar-wrapper"><%= image_tag current_user.image_url, :class => "avatar" %></div>
+        <% end %>
     </div>
 <% end %>
