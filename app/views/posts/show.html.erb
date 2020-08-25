@@ -4,5 +4,7 @@ Username: <%= @post.user.name %>
 <div><%= image_tag @post.image_url, :class => "img-post" %></div>
 Description: <%= @post.title %> <br>
 Created at: <%= @post.created_at %>
-<%= link_to "edit", edit_post_path %>
+<% if @post.user_id == current_user.id %>
+    <%= link_to "edit", edit_post_path %>
+<% end %>
 </div>
