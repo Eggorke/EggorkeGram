@@ -1,5 +1,6 @@
 <%= form_for @post do |f| %>
-    
+
+    <%= render 'shared/error_messages' %>    
     <%= f.hidden_field :image, value: @post.cached_image_data %>
     <%= f.label :title %>
     <%= f.text_field :title %>
