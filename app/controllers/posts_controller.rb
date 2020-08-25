@@ -13,7 +13,10 @@ class PostsController < ApplicationController
   end
   
   def update
-    
+    post = Post.find(params[:id])
+    post.update(post_params)
+    flash[:success] = 'Post was updated'
+    redirect_to post
   end
 
   
