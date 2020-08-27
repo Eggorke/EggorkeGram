@@ -87,6 +87,7 @@ $button-color: #9966CC;
 
 .content{
     width: 75%;
+    margin: 15px auto;
 }
 
 .nav-link{
@@ -115,20 +116,45 @@ $button-color: #9966CC;
 }
 
 .img-post-feed{
-    max-width: 300px;
-    max-height: 300px;
+    
+    width: 293px;
+}
+
+.home-feed-wrapper{
+    margin: 5px auto 0px;
+    width: 300px;
+    height: 300px;
+    
+    overflow: hidden;
 }
 
 .avatar-wrapper{
-    margin: 5px auto 0px;
-    width: 130px;
-    height: 130px;
+    margin: 1px auto 0px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
     overflow: hidden;
             
 }
 
 .avatar{
+    width: 60px;
+}
+
+.avatar-wrapper-home{
+    margin: 5px auto 0px;
     width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+            
+}
+
+.avatar-home{
+    width: 150px;
+}
+
+.center{
+    margin: auto;
 }
 

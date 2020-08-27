@@ -10,5 +10,7 @@
     
     <%= f.submit %>
 
+    <%= link_to "Delete post", @post, method: :delete, data: {confirm: "Are you sure?"} %>
+
 
 <% end %>

@@ -1,13 +1,41 @@
-    <div class="content">    
-        <% if user_signed_in? %>
-            
-            <% @posts.where(user_id: current_user.id).each do |p| %>  <!-- Dont know what is better. "where"  -->
-                <% if p.image_data? %>
-                    <% if p.user_id == current_user.id %>   <!-- or this one  -->
-                    <%= link_to (image_tag p.image_url, class: "img-post-feed"), p %>
+<div class="content">    
+    <% if user_signed_in? %>
+        <div class="container">
+            <div class="row">
+                <% if current_user.image_data? %>
+                    <div class="col-4 center">
+                        <div class="avatar-wrapper-home">
+                            <%= image_tag current_user.image_url, :class => "avatar-home" %>
+                        </div>
+                    </div>
+                <% end %>
+                <div class="col-4 center">
+                    <%= current_user.name %>
+                </div>
+                <div class="col-4 center">
+                    <%= link_to "Settings", edit_user_registration_path %>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <% @posts.where(user_id: current_user.id).each do |p| %>
+                    <% if p.image_data? %>   
+                        <div class="col-4 home-feed-wrapper">
+                            <%= link_to (image_tag p.image_url, class: "img-post-feed"), p %> 
+                        </div>
                     <% end %>
                 <% end %>
-            <% end %>
-        <% end %>
-    </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- if not signed in -->
+    <% else %>
+        <h1>Welcome to Eggorkegramm</h1>
+        <p>Please Log in or signup before using this awesome app</p>
+    <% end %>
+</div>
     
