@@ -4,7 +4,10 @@
     <div><%= image_tag @post.image_url, :class => "img-post" %></div>
     Title: <%= @post.title %> <br>
     Description: <%= @post.comment %> <br>
-    Created at: <%= @post.created_at %>
+    <%= time_ago_in_words @post.created_at %> ago <br>
+    <%= render 'comments', p:@post %>
+    <%= render 'commentary_add', p:@post %>
+
     <% if @post.user_id == current_user.id %>
         <%= link_to "edit", edit_post_path %>
     <% end %>

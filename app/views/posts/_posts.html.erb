@@ -4,7 +4,16 @@
     <% if p.image_data? %>
         <p> <%= p.user.name %> </p>
         <div><%= link_to (image_tag p.image_url, :class => "img-post-feed"), p %></div>
-        <p> <%= p.title %> </p>
+        <p>Tittle:  <%= p.title %> </p>
+        <p> Description:  <%= p.comment %> </p>
+
+        <!-- show commentaries -->
+        
+        <%= render 'comments', p:p %>
+        
+        <%= render 'commentary_add', p:p %>
+        
+
     <% end %>
     
 <% end %>
