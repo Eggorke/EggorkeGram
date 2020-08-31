@@ -2,7 +2,8 @@
     <h1>Post</h1>
     Username: <%= @post.user.name %>
     <div><%= image_tag @post.image_url, :class => "img-post" %></div>
-    Description: <%= @post.title %> <br>
+    Title: <%= @post.title %> <br>
+    Description: <%= @post.comment %> <br>
     Created at: <%= @post.created_at %>
     <% if @post.user_id == current_user.id %>
         <%= link_to "edit", edit_post_path %>
