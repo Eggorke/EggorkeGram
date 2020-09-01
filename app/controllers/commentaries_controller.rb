@@ -9,7 +9,7 @@ class CommentariesController < ApplicationController
             flash[:success] = 'Commentary was added'
         else
             redirect_to posts_path
-            flash[:danger] = 'Commentary sucked'
+            flash[:danger] = 'Commentary has not been added'
         end
     end
 
