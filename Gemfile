@@ -23,6 +23,7 @@ gem "image_processing"
 gem "mini_magick", ">= 4.3.5"
 gem 'fastimage'
 gem 'pg'
+gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -59,9 +60,7 @@ group :test do
   gem 'webdrivers'
 end
 
-#group :production do
-#  gem "pg"
-#end
+
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

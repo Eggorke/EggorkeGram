@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col-2 center">
+            <p>Your follows:</p>
+            <% @following.each do |f| %>
+                <%= f.name %>
+                <!-- тут вогнать анфолоу --> 
+                <%= form_tag unfollow_user_path, method: :post do %>
+                    <%= hidden_field_tag :unfollow_id, f.id %>
+                    <%= submit_tag "Unfollow", class: "btn btn-info" %>
+                <% end %>
+                <br>
+
+            <% end %>
+        </div>
+        <div class="col-2 center">
+            <p>Your followers:</p>
+            <% @followers.each do |f| %>
+                <%= f.name %> <br>
+            <% end %>
+        </div>
+    </div>
+</div>

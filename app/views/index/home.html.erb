@@ -3,24 +3,28 @@
         <div class="container">
             <div class="row">
                 <% if current_user.image_data? %>
-                    <div class="col-4 center">
+                    <div class="col-3 center">
                         <div class="avatar-wrapper-home">
                             <%= image_tag current_user.image_url, :class => "avatar-home" %>
                         </div>
                     </div>
                 <% end %>
-                <div class="col-4 center">
+                <div class="col-3 center">
                     <%= current_user.name %>
                 </div>
-                <div class="col-4 center">
+                <div class="col-3 center">
                     <%= link_to "Settings", edit_user_registration_path %>
+                </div>
+                <div class="col-3 center">
+                    <%= current_user.follow_count %> <%= link_to "Followings", index_follow_user_path %>
+                    <%= current_user.followers_count%> <%= link_to "Followers", index_follow_user_path %>
                 </div>
                 
             </div>
         </div>
         <div class="container">
             <div class="row">
-                <% @posts.where(user_id: current_user.id).each do |p| %>
+                <% @posts.each do |p| %>
                     <% if p.image_data? %>   
                         <div class="col-4 home-feed-wrapper">
                             <%= link_to (image_tag p.image_url, class: "img-post-feed"), p %> 
