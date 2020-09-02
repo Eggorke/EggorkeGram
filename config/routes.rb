@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   post 'unfollow', to: 'follow#unfollow_user', as: 'unfollow_user'
   get 'follows', to: 'follow#index', as: 'index_follow_user'
   root 'index#home'
+  resources :users
+
+  
 
   
 

@@ -80,10 +80,10 @@ $button-color: #9966CC;
 
 .info{
     width: 25%;
-    border: 1px solid black;
     margin-left: auto;
-    
+    background-color: rgba(204, 204, 204, 0.3); 
 }
+
 
 .content{
     width: 75%;
@@ -154,7 +154,30 @@ $button-color: #9966CC;
     width: 150px;
 }
 
+.avatar-wrapper-sub{
+    margin: 0px auto;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.avatar-sub{
+    width: 36px;
+}
+
 .center{
     margin: auto;
 }
 
+.font-28{
+    font-size: 28px;
+}
+
+.font-22{
+    font-size: 22px;
+}
+
+.w100{
+    width: 100% !important;
+}

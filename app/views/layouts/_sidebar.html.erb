@@ -1,15 +1,41 @@
 <% if user_signed_in? %>
-    <div class="info sticky">
+    <div class="info sticky pt-4">
+        <p class="font-22"> Follow users: </p>
         <%User.all.each do |u| %>
-            <% unless u.followed_by?(current_user) %>
-                <% unless current_user == u %>
-                    <%= u.name %>
-                    <%= form_tag follow_user_path, method: :post do %>
-                        <%= hidden_field_tag :follow_id, u.id %>
-                        <%= submit_tag "Follow", class: "btn btn-info" %>
+            <div class="mt-5">
+                <% unless u.followed_by?(current_user) %>
+                    <% unless current_user == u %>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6 container">
+                                    <div class="row">
+                                        <div class="col-3 center">
+                                            <% if u.image_data? %>
+                                                <div class="avatar-wrapper-sub">
+                                                    <%= image_tag u.image_url, :class => "avatar-sub" %>
+                                                </div>
+                                            <% else %>
+                                                <div class="avatar-wrapper-sub">
+                                                    <%= image_tag 'https://yt3.ggpht.com/a/AATXAJxWoGLwn5Ktx_lNqmI_-BpiAhyiTHctP2U1gw=s900-c-k-c0xffffffff-no-rj-mo', :class => "avatar-sub" %>
+                                                </div>
+                                            <% end %>
+                                        </div>
+                                        <div class="col-9 center">
+                                            <strong><%= link_to u.name, u %></strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <%= form_tag follow_user_path, method: :post do %>
+                                        <%= hidden_field_tag :follow_id, u.id %>
+                                        <%= submit_tag "Follow", class: "btn btn-success" %>
+                                    <% end %>
+                                </div>
+                            </div>
+                        </div>
                     <% end %>
                 <% end %>
-            <% end %>
+            </div>    
         <% end %>
     </div>
 <% end %>

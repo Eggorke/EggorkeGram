@@ -10,10 +10,10 @@ class FollowController < ApplicationController
 
         if current_user.follow(follow_aim_user)
             flash[:success] = 'You have followed'
-            redirect_to root_path
+            redirect_to request.referer
         else
             flash[:danger] = 'You have not followed'
-            redirect_to root_path
+            redirect_to request.referer
         end
     end
 
@@ -22,10 +22,10 @@ class FollowController < ApplicationController
 
         if current_user.stop_following(unfollow_aim_user)
             flash[:success] = "You have unfollowed"
-            redirect_to index_follow_user_path
+            redirect_to request.referer
         else
             flash[:danger] = "something goes wrong"
-            redirect_to index_follow_user_path
+            redirect_to request.referer
         end
     end
 

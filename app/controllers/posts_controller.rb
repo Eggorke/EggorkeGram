@@ -1,7 +1,9 @@
 class PostsController < ApplicationController
   
   def index
-    @posts = Post.all
+    feed_aim_ids = current_user.following_users.ids
+    feed_aim_ids.push(current_user.id)
+    @posts = Post.where(user_id: feed_aim_ids)
   end
 
 
