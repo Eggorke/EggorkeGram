@@ -61,7 +61,7 @@
                 <% @posts.each do |p| %>
                     <% if p.image_data? %>   
                         <div class="col-4 home-feed-wrapper mb-5">
-                            <%= link_to (image_tag p.image_url, class: "img-post-feed"), p %> 
+                            <%= link_to (image_tag p.image_url, class: "img-home-post"), p %> 
                         </div>
                     <% end %>
                 <% end %>

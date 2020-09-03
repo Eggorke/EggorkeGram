@@ -1,8 +1,17 @@
-<%= form_for Commentary.create do |f| %>
-             
-    <%= f.hidden_field :post_id, value: p.id %>
-    <%= f.hidden_field :user_id, value: current_user.id %>
-    <%= f.text_field :commentary_text, placeholder: "add comment here" %>
-    <%= f.submit "Go" %>
-    
-<% end %>
+<div class="input-group mb-3 mt-3 container">
+    <%= form_for Commentary.create do |f| %>
+                
+        <%= f.hidden_field :post_id, value: p.id %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <div class="row">
+            <div class="col-9 pr-0 pl-0">
+                <%= f.text_field :commentary_text, placeholder: "add comment here" , :class => "form-control"%>
+            </div>
+            <div class="col-3 pr-0 pl-2">
+                <%= f.submit "Comment it", :class => "btn btn-outline-secondary" %>
+            </div>
+        </div>
+    <% end %>
+</div>
+
+

@@ -2,6 +2,48 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+
+.img-feed-wrapper{
+    max-width: 614px;
+    max-height: 614px;
+    overflow: hidden;
+}
+
+
 .img-post-feed{
-    max-width: 300px;
+    width: 640px;
+}
+
+.feed-container{
+    max-width: 614px;
+    border: 0.5px solid rgba(179, 179, 179, 0.5);
+    margin-bottom: 24px;
+}
+
+.post-feed-head{
+    height: 64px;
+}
+
+.flex-container{
+    display: flex;
+    justify-content: start;
+    align-items: center;   
+}
+
+.comments-flex{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.flex-item{
+    width: 100%;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    text-align: left;
+}
+
+.time-ago{
+    font-style: italic;
+    margin-left: 15px;
 }

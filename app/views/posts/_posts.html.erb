@@ -1,20 +1,42 @@
 
 <% @posts.each do |p| %>
-    
-    <% if p.image_data? %>
-        <p> <%= p.user.name %> </p>
-        <div><%= link_to (image_tag p.image_url, :class => "img-post-feed"), p %></div>
-        <p>Tittle:  <%= p.title %> </p>
-        <p> Description:  <%= p.comment %> </p>
+    <div class="container feed-container">
 
-        <!-- show commentaries -->
-        
-        <%= render 'comments', p:p %>
-        
-        <%= render 'commentary_add', p:p %>
-        
+        <% if p.image_data? %>
+            <div class="row post-feed-head">
+                <div class="col-1 center">
+                    <% if p.user.image_data? %>
+                        <div class="avatar-wrapper-sub">
+                            <%= image_tag p.user.image_url, :class => "avatar-sub" %>
+                        </div>
+                    <% else %>
+                        <div class="avatar-wrapper-sub">
+                            <%= image_tag 'https://yt3.ggpht.com/a/AATXAJxWoGLwn5Ktx_lNqmI_-BpiAhyiTHctP2U1gw=s900-c-k-c0xffffffff-no-rj-mo', :class => "avatar-sub" %>
+                        </div>
+                    <% end %>
+                </div>
+                <div class="col-11 flex-container">
+                    <%= link_to p.user.name, p.user, :class => "user-link" %>
+                </div>
+            </div>
 
-    <% end %>
-    
+            <div class="row img-feed-wrapper"><%= link_to (image_tag p.image_url, :class => "img-post-feed"), p %></div>
+            <div class="row"><span class="time-ago"><%= time_ago_in_words p.created_at%> ago</span></div>
+            <div class="container">
+                <div class="row mb-5">
+                <%= link_to p.user.name, p.user, :class => "user-link"%> 
+                <%= p.title %>
+                
+                </div>
+
+                <!-- show commentaries -->
+                
+                <div class="row"><%= render 'comments', p:p %></div>
+                
+                <div class="row"><%= render 'commentary_add', p:p %></div>
+            
+            </div>
+        <% end %>
+    </div>
 <% end %>
 

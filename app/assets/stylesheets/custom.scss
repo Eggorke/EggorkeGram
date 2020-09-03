@@ -115,7 +115,7 @@ $button-color: #9966CC;
     background-color: rgba(147, 224, 140, 0.349) !important;
 }
 
-.img-post-feed{
+.img-home-post{
     
     width: 293px;
 }
@@ -134,11 +134,13 @@ $button-color: #9966CC;
     height: 56px;
     border-radius: 50%;
     overflow: hidden;
+    filter: blur(0px);
             
 }
 
 .avatar{
     width: 60px;
+    filter: blur(0px);
 }
 
 .avatar-wrapper-home{
@@ -147,11 +149,13 @@ $button-color: #9966CC;
     height: 140px;
     border-radius: 50%;
     overflow: hidden;
+    filter: blur(0px);
             
 }
 
 .avatar-home{
     width: 150px;
+    filter: blur(0px);
 }
 
 .avatar-wrapper-sub{
@@ -160,10 +164,12 @@ $button-color: #9966CC;
     height: 32px;
     overflow: hidden;
     border-radius: 50%;
+    filter: blur(0px);
 }
 
 .avatar-sub{
     width: 36px;
+    filter: blur(0px);
 }
 
 .center{
@@ -179,5 +185,19 @@ $button-color: #9966CC;
 }
 
 .w100{
+    width: 100% !important;
+}
+
+.user-link{
+    color: black !important;
+    font-weight: bold;
+    padding-right: 5px;
+}
+
+.user-link:hover{
+    text-decoration: none;
+}
+
+.new_commentary{
     width: 100% !important;
 }
