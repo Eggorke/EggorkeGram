@@ -3,4 +3,9 @@ module ApplicationHelper
     offset = User.order("RANDOM()").limit(11)
     return offset
    end
+
+
+
+
+
 end

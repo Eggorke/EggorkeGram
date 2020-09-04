@@ -39,7 +39,7 @@
                             </div>
 
                             <div class="col-6 center">
-                                <span class="font-22 mr-5"><%= current_user.follow_count %> <%= link_to "Followings", index_follow_user_path %></span>
+                                <span class="font-22 mr-2"><%= current_user.follow_count %> <%= link_to "Followings", index_follow_user_path %></span>
                                 <span class="font-22"><%= current_user.followers_count%> <%= link_to "Followers", index_follow_user_path %></span>
                             </div>            
                         </div>
@@ -56,6 +56,7 @@
                         </div>
                     <% end %>
                 <% end %>
+                <div class="col-4"></div>
                 <div class="col-4"></div>
             </div>
         </div>

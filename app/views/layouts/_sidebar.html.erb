@@ -2,7 +2,7 @@
     <div class="info sticky pt-4">
         <p class="font-22">10 random users to Follow: </p>
         <%ten_random_users.each do |u| %>
-            <div class="mt-5">
+            <div class="mt-4">
                 <% unless u.followed_by?(current_user) %>
                     <% unless current_user == u %>
                         <div class="container">
@@ -16,7 +16,7 @@
                                                 </div>
                                             <% else %>
                                                 <div class="avatar-wrapper-sub">
-                                                    <%= image_tag 'https://yt3.ggpht.com/a/AATXAJxWoGLwn5Ktx_lNqmI_-BpiAhyiTHctP2U1gw=s900-c-k-c0xffffffff-no-rj-mo', :class => "avatar-sub" %>
+                                                    <%= image_tag "userimage.png", :class => "avatar-sub" %>
                                                 </div>
                                             <% end %>
                                         </div>

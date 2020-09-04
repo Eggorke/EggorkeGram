@@ -1,5 +1,5 @@
 class FollowController < ApplicationController
-    
+    include(FollowHelper)
     def index
         @following = current_user.following_users
         @followers = current_user.followers
@@ -10,10 +10,10 @@ class FollowController < ApplicationController
 
         if current_user.follow(follow_aim_user)
             flash[:success] = 'You have followed'
-            redirect_to request.referer
+            basic_redirect
         else
             flash[:danger] = 'You have not followed'
-            redirect_to request.referer
+            basic_redirect
         end
     end
 
@@ -22,10 +22,10 @@ class FollowController < ApplicationController
 
         if current_user.stop_following(unfollow_aim_user)
             flash[:success] = "You have unfollowed"
-            redirect_to request.referer
+            basic_redirect
         else
             flash[:danger] = "something goes wrong"
-            redirect_to request.referer
+            basic_redirect
         end
     end
 

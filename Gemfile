@@ -24,6 +24,7 @@ gem "mini_magick", ">= 4.3.5"
 gem 'fastimage'
 gem 'pg'
 gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
+gem 'will_paginate', '~> 3.1.0'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
