@@ -1,39 +1,43 @@
-<h2>Sign up</h2>
+<div class="container login-container">  
+  <div class="row mb-5 center text-center"><h2>Sign up</h2></div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :image, "Avatar" %>
-    <%= f.file_field :image %>
-  </div>
+    <div class="field row center text-center">
+      <!-- <%= f.label :image, "Avatar", :class=>"mr-2" %> -->
+      <%= f.file_field :image, :class => "image-enter" %>
+    </div>
+    <div class="field row mb-5 text-center">
+      <span class="italic">Avatar</span>
+    </div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
-  </div>
+    <div class="field row mb-5">
+      <!-- <%= f.label :name %><br /> -->
+      <div class="col-sm center"><%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Nickname", :class => "enter-field" %></div>
+    </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: false, autocomplete: "email" %>
-  </div>
+    <div class="field row mb-5">
+      <!-- <%= f.label :email %><br /> -->
+      <div class="col-sm center"><%= f.email_field :email, autofocus: false, autocomplete: "Email", placeholder: "Email", :class => "enter-field" %></div>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+    <div class="field row mb-5">
+      <!-- <%= f.label :password %> -->
+      <!-- <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br /> -->
+      <div class="col-sm center"><%= f.password_field :password, autocomplete: "new-password", placeholder: "Password", :class => "enter-field" %></div>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+    <div class="field row mb-5">
+      <!-- <%= f.label :password_confirmation %><br /> -->
+      <div class="col-sm center"> <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password confirmation", :class => "enter-field" %></div>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+    <div class="actions row mb-5 center text-center">
+      <%= f.submit "Sign up", :class => "btn btn-secondary login-btn" %>
+    </div>
+  <% end %>
 
-<%= render "devise/shared/links" %>
+  <!-- <%= render "devise/shared/links" %> -->

@@ -5,7 +5,7 @@ class Post < ApplicationRecord
 
     validates :image, presence: true
     validates :title, presence: true
-    validates :commentary, presence: true
+    
 end
 
 

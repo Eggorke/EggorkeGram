@@ -1,14 +1,24 @@
 <%= form_for @post do |f| %>
 
     <%= render 'shared/error_messages' %>    
-    <%= f.hidden_field :image, value: @post.cached_image_data %>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+    <div class="row mb-5">
+        <%= f.hidden_field :image, value: @post.cached_image_data %>
+    </div>
 
-    <%= f.label :image %>
-    <%= f.file_field :image %>
+    <div class="row mb-5">
+    <!-- <%= f.label :image %> -->
+    <div class="col-sm center"><%= f.file_field :image %></div>
+    </div>
+
+    <div class="row mb-5">
+    <%= f.label :title, :class=>"label-center italic ml-auto mr-auto"%>
+    <%= f.text_area:title, :class=>"text-field" %>
+    </div>
+
     
-    <%= f.submit %>
 
+    <div class="row mb-5 center text-center">
+    <%= f.submit "Create post" , :class => "btn btn-secondary login-btn" %>
+    </div>
 
 <% end %>

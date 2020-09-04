@@ -112,11 +112,10 @@ $button-color: #9966CC;
 }
 
 .alert-notice{
-    background-color: rgba(147, 224, 140, 0.349) !important;
+    background-color: rgba(43, 158, 32, 0.349) !important;
 }
 
 .img-home-post{
-    
     width: 293px;
 }
 
@@ -200,4 +199,58 @@ $button-color: #9966CC;
 
 .new_commentary{
     width: 100% !important;
+}
+
+.login-container{
+    width: 50%;
+    margin: 15px auto;
+    
+}
+
+.enter-field{
+    text-align: center;
+    border: none;
+    border-bottom: 1px solid rgba(204, 204, 204, 0.7);
+    width: 70%;
+    font-size: 2rem;
+}
+
+.enter-field:focus{
+    border-bottom: 1px solid rgba(43, 158, 32, 0.349);
+}
+
+.text-center{
+    justify-content: center;
+}
+
+.login-btn{
+    width: 40%;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.image-enter{
+    text-align: center;
+    border-bottom: 1px solid rgba(204, 204, 204, 0.7);
+    width: 70%;
+}
+
+.italic{
+    font-style: italic;
+    font-size: 1rem;
+}
+
+.reset-pass-btn{
+    width: 60%;
+    font-size: 1rem;
+}
+
+.label-center{
+    margin: auto 5px auto 0;
+}
+
+.text-field{
+    line-height: 2rem;
+    height: 6rem;
+    width: 100%;
 }
