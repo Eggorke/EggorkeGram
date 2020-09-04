@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
     <div class="info sticky pt-4">
-        <p class="font-22">10 random users to Follow: </p>
+        <p class="font-22">Random users to Follow: </p>
         <%ten_random_users.each do |u| %>
             <div class="mt-4">
                 <% unless u.followed_by?(current_user) %>
