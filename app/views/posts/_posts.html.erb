@@ -21,9 +21,14 @@
             </div>
 
             <div class="row img-feed-wrapper"><%= link_to (image_tag p.image_url, :class => "img-post-feed"), p %></div>
-            <div class="row"><span class="time-ago"><%= time_ago_in_words p.created_at%> ago</span></div>
+            <div class="row mt-2">
+                <div class="col-4"><span class="time-ago"><%= time_ago_in_words p.created_at%> ago</span></div>
+                <div class="col-4"><%= total_likes(p)%> Total Likes</div> 
+                <div class="col-4"> <%= render 'likes/likes', p:p%>  </div>
+            </div>
             <div class="container">
-                <div class="row mb-5">
+                <div class="row mb-5 border-bottom">
+                
                 <%= link_to p.user.name, p.user, :class => "user-link"%> 
                 <%= p.title %>
                 

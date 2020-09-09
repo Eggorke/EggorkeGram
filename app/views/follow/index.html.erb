@@ -1,21 +1,23 @@
 <div class="container mt-5 content">
     <div class="row">
         <div class="col-6 ">
-            <p>Followings:</p>
+            <p class="font-22">Followings:</p>
+            
             <% @following.each do |f| %>
-                <%= link_to f.name, f %>
-                <%= form_tag unfollow_user_path, method: :post do %>
-                    <%= hidden_field_tag :unfollow_id, f.id %>
-                    <%= submit_tag "Unfollow", class: "btn btn-danger" %>
-                <% end %>
-                <br>
-
+            <div class="mb-2">
+                <%= link_to f.name, f , :class => "user-link"%>
+                <%= render 'follow/unfollow', f:f%>
+            </div>
             <% end %>
+            
+            <%= will_paginate @following, :page_links => false, :class => "apple_pagination" %>
         </div>
         <div class="col-6 ">
-            <p>Followers:</p>
+            <p class="font-22">Followers:</p>
             <% @followers.each do |f| %>
-                <%= link_to f.name, f %> <br>
+            <div class="mb-2">
+                <%= link_to f.name, f, :class => "user-link" %>
+            </div>
             <% end %>
         </div>
     </div>

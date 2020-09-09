@@ -1,0 +1,4 @@
+<%= form_tag unfollow_user_path, method: :post do %>
+    <%= hidden_field_tag :unfollow_id, f.id %>
+    <%= submit_tag "Unfollow", class: "btn btn-danger" %>
+<% end %>

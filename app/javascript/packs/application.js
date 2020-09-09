@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function(){
         x.classList.add("hide");
     }
 
-    setTimeout(HideAlert, 10000);
+    setTimeout(HideAlert, 5000);
     
 });
 

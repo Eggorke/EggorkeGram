@@ -1,7 +1,7 @@
 class FollowController < ApplicationController
     include(FollowHelper)
     def index
-        @following = current_user.following_users
+        @following = current_user.following_users.paginate(page: params[:page], per_page: 10)
         @followers = current_user.followers
     end
 

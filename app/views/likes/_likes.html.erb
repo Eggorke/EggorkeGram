@@ -1,0 +1,5 @@
+<% if post_already_liked(p) %>
+    <%= render 'likes/like', p:p%>
+<% else %>
+    <%= render 'likes/unlike', p:p%>
+<% end %>

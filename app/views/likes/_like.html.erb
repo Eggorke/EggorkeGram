@@ -1,0 +1,5 @@
+<%= form_tag like_path, method: :post do %>
+    <%= hidden_field_tag :user_id, current_user.id %>
+    <%= hidden_field_tag :post_id, p.id %>
+    <%= submit_tag "Like", class: "btn btn-success" %>
+<% end %>
