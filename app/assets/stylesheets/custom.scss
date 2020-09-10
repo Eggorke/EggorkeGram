@@ -257,7 +257,7 @@ html{
 
 .text-field{
     line-height: 2rem;
-    height: 6rem;
+    height: 4rem;
     width: 100%;
 }
 
@@ -291,4 +291,16 @@ html{
 
 .hide{
     display: none !important;
+}
+
+.post-show{
+    max-width: 640px;
+}
+
+.post-comment{
+    max-width: 100%;
+}
+
+.text-left{
+    text-align: left;
 }
