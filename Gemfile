@@ -25,6 +25,8 @@ gem 'fastimage'
 gem 'pg'
 gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
 gem 'will_paginate', '~> 3.1.0'
+gem "factory_bot_rails"
+gem 'faker'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -35,6 +37,8 @@ gem 'will_paginate', '~> 3.1.0'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+
+gem 'simplecov', require: false, group: :test
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -49,6 +53,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   
+  
   # Use sqlite3 as the database for Active Record
   #gem 'sqlite3', '~> 1.4'
 end
@@ -59,6 +64,13 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'shoulda-matchers', '~> 4.0'
+  gem 'database_cleaner-active_record'
+  gem 'rails-controller-testing'
+end
+
+group :development, :test do
+  gem 'rspec-rails', '~> 4.0.1'
 end
 
 
