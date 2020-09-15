@@ -1,7 +1,5 @@
 class CommentariesController < ApplicationController
 
-    
-
     def create
         @commentary = Commentary.new(comment_params)
         if @commentary.save
