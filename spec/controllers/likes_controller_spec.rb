@@ -15,9 +15,14 @@ RSpec.describe LikesController, type: :controller do
         subject { get :like, params: params } 
 
         it "should redirect to request referer after putting LIKE" do
-            request.env['HTTP_REFERER'] = 'http://localhost:3000' #Долго гуглил... но нагуглил ^_^ иначе не возвращает request referer из контроллера
+            referer_redirect_rspec  
             subject
             is_expected.to redirect_to(request.referer)
+        end
+
+        it "should change Like count by +1" do
+            referer_redirect_rspec 
+            expect { subject }.to change { Like.count }.by(1)
         end
         
     end
@@ -31,9 +36,14 @@ RSpec.describe LikesController, type: :controller do
         subject { process :unlike, method: :delete, params: like_params }
 
         it "should redirect to request referer after DISLIKE" do
-            request.env['HTTP_REFERER'] = 'http://localhost:3000'
+            referer_redirect_rspec 
             subject
             is_expected.to redirect_to(request.referer)
+        end
+
+        it "should change Like count by -1" do
+            referer_redirect_rspec 
+            expect { subject }.to change { Like.count }.by(-1)
         end
 
 

@@ -1,5 +1,6 @@
 class FollowController < ApplicationController
     include(FollowHelper)
+    before_action :user_signed_in?
     def index
         @following = current_user.following_users.paginate(page: params[:page], per_page: 10)
         @followers = current_user.followers
@@ -11,9 +12,6 @@ class FollowController < ApplicationController
         if current_user.follow(follow_aim_user)
             flash[:success] = 'You have followed'
             basic_redirect
-        else
-            flash[:danger] = 'You have not followed'
-            basic_redirect
         end
     end
 
@@ -22,9 +20,6 @@ class FollowController < ApplicationController
 
         if current_user.stop_following(unfollow_aim_user)
             flash[:success] = "You have unfollowed"
-            basic_redirect
-        else
-            flash[:danger] = "something goes wrong"
             basic_redirect
         end
     end

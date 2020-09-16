@@ -33,6 +33,23 @@ rescue ActiveRecord::PendingMigrationError => e
   puts e.to_s.strip
   exit 1
 end
+
+
+
+#It helps RSPEC to redirect to request referer while testing controllers
+#Долго гуглил... но нагуглил ^_^ иначе не возвращает request referer из контроллера
+
+def referer_redirect_rspec
+  request.env['HTTP_REFERER'] = 'http://localhost:3000'
+end
+
+
+
+
+
+
+
+
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"

@@ -27,6 +27,7 @@ gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
 gem 'will_paginate', '~> 3.1.0'
 gem "factory_bot_rails"
 gem 'faker'
+gem 'rubocop-rails', require: false
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
