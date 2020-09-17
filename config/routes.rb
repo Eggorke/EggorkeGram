@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :users
   resources :posts
   resources :commentaries, only: [:create]
+
+  get 'search', to: "search#search", as: 'search'
   
   post 'like', to: 'likes#like', as: 'like'
   post 'unlike', to: 'likes#unlike', as: 'unlike'

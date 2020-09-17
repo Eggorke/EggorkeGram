@@ -28,6 +28,7 @@ gem 'will_paginate', '~> 3.1.0'
 gem "factory_bot_rails"
 gem 'faker'
 gem 'rubocop-rails', require: false
+gem 'pg_search'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password

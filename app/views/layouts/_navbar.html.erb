@@ -3,6 +3,12 @@
   <div class="collapse navbar-collapse custom-nav-links">
     <ul class="navbar-nav">
       <% if user_signed_in? %>
+        <li class="nav-item center">
+          <%= form_tag search_path, :class => "" ,method: :get do %>
+            <%= text_field_tag :name, params[:name], placeholder: "Enter name to search" ,:class => ""  %>
+            <%= submit_tag "Search", :class => "btn btn-outline-secondary" %>
+          <% end %>
+        </li>
         <li class="nav-item"><%= link_to "Add post", new_post_path, :class => "nav-link" %></li>
         <li class="nav-item"><%= link_to "Feed", posts_url, :class => "nav-link" %></li>
         <li class="nav-item"><%= link_to 'My account', root_path, :class => "nav-link" %></li>
