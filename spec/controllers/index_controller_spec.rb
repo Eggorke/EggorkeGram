@@ -3,7 +3,9 @@ require 'rails_helper'
 RSpec.describe IndexController, type: :controller do
     let(:user) { create :user }
 
-
+    before do
+        sign_in user
+    end
 
     describe "#home" do
         subject { get :home }
