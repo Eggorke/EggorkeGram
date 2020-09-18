@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :user_signed_in?
+  before_action :redirect_if_not_log_in
   
   def index
     feed_aim_ids = current_user.following_users.ids

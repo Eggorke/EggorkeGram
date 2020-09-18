@@ -1,6 +1,7 @@
 class FollowController < ApplicationController
     include(FollowHelper)
     before_action :user_signed_in?
+    before_action :redirect_if_not_log_in
     def index
         @following = current_user.following_users.paginate(page: params[:page], per_page: 10)
         @followers = current_user.followers
