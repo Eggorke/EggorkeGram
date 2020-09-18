@@ -2,9 +2,13 @@ class PostsController < ApplicationController
   before_action :user_signed_in?
   
   def index
-    feed_aim_ids = current_user.following_users.ids
-    feed_aim_ids.push(current_user.id)
-    @posts = Post.where(user_id: feed_aim_ids).paginate(page: params[:page], per_page: 10)
+    if current_user.all_following
+      feed_aim_ids = current_user.following_users.ids
+      feed_aim_ids.push(current_user.id)
+      @posts = Post.where(user_id: feed_aim_ids).paginate(page: params[:page], per_page: 10)
+    else
+      @posts = nil
+    end
   end
 
 
