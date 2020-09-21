@@ -17,7 +17,7 @@ class User < ApplicationRecord
   has_many :commentary, dependent: :destroy
   has_many :likes, dependent: :destroy
 
-  validates :name, presence: true
+  validates :name, presence: true #, uniqueness: true
   
   acts_as_followable
   acts_as_follower
