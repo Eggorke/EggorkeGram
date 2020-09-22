@@ -18,6 +18,12 @@ jobs:
   rspec-test:
     name: RSpec
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:latest
+        ports:
+        - 5432:5432
+
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-ruby@v1
@@ -35,3 +41,9 @@ jobs:
           bundler exec rails db:migrate RAILS_ENV=test
       - name: Run tests
         run: bundler exec rake
+      - name: Upload coverage results    
+        uses: actions/upload-artifact@master
+        if: always()
+        with:
+          name: coverage-report
+          path: coverage
