@@ -1,73 +1,67 @@
 <div class="content mt-5">    
-        <div class="container mb-5">
-            <div class="row">
-                <% if @user.image_data? %>
-                    <div class="col-4 center">
-                        <div class="avatar-wrapper-home">
-                            <%= image_tag @user.image_url, :class => "avatar-home" %>
-                        </div>
-                    </div>
-                <% else %>
-                    <div class="col-4 center">
-                        <div class="avatar-wrapper-home">
-                            <%= image_tag "userimage.png", :class => "avatar-home" %>
-                        </div>
-                    </div>
-                <% end %>
-                <div class="col-8 center">
-                    <div class="container">
-                        <div class="row">
-
-                            <div class="col-6 center mb-5">
-                                <span class="font-28">@<%= @user.name %></span>
-                            </div>
-
-                            <div class="col-6 center mb-5">
-                            </div>
-
-                        </div>
-                        <div class="row">
-
-                            <div class="col-6 center">
-                                <span class="font-22"><%= @posts.count%> 
-                                <% if @posts.count == 1 %>
-                                    Post
-                                <% else %>
-                                    Posts
-                                <% end %>
-                                </span>
-                            </div>
-
-                            <div class="col-6 center">
-                                <% if current_user.following?(@user) %>
-                                    <%= form_tag unfollow_user_path, method: :post do %>
-                                        <%= hidden_field_tag :unfollow_id, @user.id %>
-                                        <%= submit_tag "Unfollow", class: "btn btn-danger" %>
-                                    <% end %>
-                                <% else %>
-                                    <%= form_tag follow_user_path, method: :post do %>
-                                        <%= hidden_field_tag :follow_id, @user.id %>
-                                        <%= submit_tag "Follow", class: "btn btn-success" %>
-                                    <% end %>
-                                <% end %>
-                            </div>            
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <div class="container mb-5">
+    <div class="row">
+      <% if @user.image_data? %>
+        <div class="col-4 center">
+          <div class="avatar-wrapper-home">
+            <%= image_tag @user.image_url, :class => "avatar-home" %>
+          </div>
         </div>
-        <div class="container mt-5 border-top">
-            <div class="row mt-5">
-                <% @posts.each do |p| %>
-                    <% if p.image_data? %>   
-                        <div class="col-4 home-feed-wrapper mb-5">
-                            <%= link_to (image_tag p.image_url, class: "img-home-post"), p %> 
-                        </div>
-                    <% end %>
-                <% end %>
-                <div class="col-4"></div>
-                <div class="col-4"></div>
-            </div>
+      <% else %>
+      <div class="col-4 center">
+        <div class="avatar-wrapper-home">
+          <%= image_tag "userimage.png", :class => "avatar-home" %>
         </div>
+      </div>
+      <% end %>
+      <div class="col-8 center">
+        <div class="container">
+          <div class="row">
+            <div class="col-6 center mb-5">
+              <span class="font-28">@<%= @user.name %></span>
+            </div>
+            <div class="col-6 center mb-5"></div>
+          </div>
+          <div class="row">
+            <div class="col-6 center">
+              <span class="font-22"><%= @posts.count%> 
+              <% if @posts.count == 1 %>
+                Post
+              <% else %>
+                Posts
+              <% end %>
+              </span>
+            </div>
+            <div class="col-6 center">
+              <% if current_user.following?(@user) %>
+                <%= form_tag unfollow_user_path, method: :post do %>
+                  <%= hidden_field_tag :unfollow_id, @user.id %>
+                  <%= submit_tag "Unfollow", class: "btn btn-danger" %>
+                <% end %>
+              <% else %>
+                <%= form_tag follow_user_path, method: :post do %>
+                  <%= hidden_field_tag :follow_id, @user.id %>
+                  <%= submit_tag "Follow", class: "btn btn-success" %>
+                <% end %>
+              <% end %>
+            </div>            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-5 border-top">
+    <div class="row mt-5">
+      <% @posts.each do |p| %>
+        <% if p.image_data? %>   
+          <div class="col-4 home-feed-wrapper mb-5">
+            <%= link_to (image_tag p.image_url, class: "img-home-post"), p %> 
+          </div>
+        <% end %>
+      <% end %>
+      <div class="col-4"></div>
+      <div class="col-4"></div>
+    </div>
+  </div>
 </div>
     

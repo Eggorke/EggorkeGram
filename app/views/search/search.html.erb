@@ -1,23 +1,22 @@
 <div class="container content">
 <h2>The results of search: <%= params[:name] %>(<%= @searched_users.count %>)  </h2>
-    <% @searched_users.each do |u| %>
-    
-        <div class="row mt-5 center">
-            <div class="mr-2">
-                <% if u.image_data? %>
-                    <div class="avatar-wrapper-sub">
-                        <%= image_tag u.image_url, :class => "avatar-sub" %>
-                    </div>
-                <% else %>
-                    <div class="avatar-wrapper-sub">
-                        <%= image_tag "userimage.png", :class => "avatar-sub" %>
-                    </div>
-                <% end %>
-            </div>
-            <div class="">
-                <%= link_to u.name, u , :class => "user-link"%>
-            </div>
+  <% @searched_users.each do |u| %>  
+    <div class="row mt-5 center">
+      <div class="mr-2">
+        <% if u.image_data? %>
+          <div class="avatar-wrapper-sub">
+            <%= image_tag u.image_url, :class => "avatar-sub" %>
+          </div>
+        <% else %>
+          <div class="avatar-wrapper-sub">
+            <%= image_tag "userimage.png", :class => "avatar-sub" %>
+          </div>
+        <% end %>
+      </div>
+        <div class="">
+          <%= link_to u.name, u , :class => "user-link"%>
         </div>
+    </div>
                                 
-    <% end %>
+  <% end %>
 </div>

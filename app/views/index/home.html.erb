@@ -1,70 +1,65 @@
 <div class="content mt-5">    
-    <% if user_signed_in? %>
-        <div class="container mb-5">
+  <% if user_signed_in? %>
+    <div class="container mb-5">
+      <div class="row">
+        <% if current_user.image_data? %>
+          <div class="col-4 center">
+            <div class="avatar-wrapper-home">
+              <%= image_tag current_user.image_url, :class => "avatar-home" %>
+            </div>
+          </div>
+        <% else %>
+        <div class="avatar-wrapper-home">
+          <%= image_tag 'https://yt3.ggpht.com/a/AATXAJxWoGLwn5Ktx_lNqmI_-BpiAhyiTHctP2U1gw=s900-c-k-c0xffffffff-no-rj-mo', :class => "avatar-home" %>
+        </div>
+        <% end %>
+        <div class="col-8 center">
+          <div class="container">
             <div class="row">
-                <% if current_user.image_data? %>
-                    <div class="col-4 center">
-                        <div class="avatar-wrapper-home">
-                            <%= image_tag current_user.image_url, :class => "avatar-home" %>
-                        </div>
-                    </div>
-                    <% else %>
-                        <div class="avatar-wrapper-home">
-                            <%= image_tag 'https://yt3.ggpht.com/a/AATXAJxWoGLwn5Ktx_lNqmI_-BpiAhyiTHctP2U1gw=s900-c-k-c0xffffffff-no-rj-mo', :class => "avatar-home" %>
-                        </div>
-                <% end %>
-                <div class="col-8 center">
-                    <div class="container">
-                        <div class="row">
-
-                            <div class="col-6 center mb-5">
-                                <span class="font-28">@<%= current_user.name %></span>
-                            </div>
-
-                            <div class="col-6 center mb-5">
-                                <%= link_to "Settings", edit_user_registration_path, class: "btn btn-outline-secondary font-22 w100" %>
-                            </div>
-
-                        </div>
-                        <div class="row">
-
-                            <div class="col-6 center">
-                                <span class="font-22"><%= @posts.count%> 
-                                <% if @posts.count == 1 %>
-                                    Post
-                                <% else %>
-                                    Posts
-                                <% end %>
-                                </span>
-                            </div>
-
-                            <div class="col-6 center">
-                                <span class="font-22 mr-2"><%= current_user.follow_count %> <%= link_to "Followings", index_follow_user_path %></span>
-                                <span class="font-22"><%= current_user.followers_count%> <%= link_to "Followers", index_follow_user_path %></span>
-                            </div>            
-                        </div>
-                    </div>
-                </div>
+              <div class="col-6 center mb-5">
+                <span class="font-28">@<%= current_user.name %></span>
+              </div>
+              <div class="col-6 center mb-5">
+                <%= link_to "Settings", edit_user_registration_path, class: "btn btn-outline-secondary font-22 w100" %>
+              </div>
             </div>
-        </div>
-        <div class="container mt-5 border-top">
-            <div class="row mt-5">
-                <% @posts.each do |p| %>
-                    <% if p.image_data? %>   
-                        <div class="col-4 home-feed-wrapper mb-5">
-                            <%= link_to (image_tag p.image_url, class: "img-home-post"), p %> 
-                        </div>
-                    <% end %>
+            <div class="row">
+              <div class="col-6 center">
+                <span class="font-22"><%= @posts.count%> 
+                <% if @posts.count == 1 %>
+                  Post
+                <% else %>
+                  Posts
                 <% end %>
-                <div class="col-4"></div>
-                <div class="col-4"></div>
+                </span>
+              </div>
+              <div class="col-6 center">
+                <span class="font-22 mr-2"><%= current_user.follow_count %> <%= link_to "Followings", index_follow_user_path %></span>
+                <span class="font-22"><%= current_user.followers_count%> <%= link_to "Followers", index_follow_user_path %></span>
+              </div>            
             </div>
+          </div>
         </div>
+      </div>
+    </div>
+    <div class="container mt-5 border-top">
+      <div class="row mt-5">
+        <% @posts.each do |p| %>
+          <% if p.image_data? %>   
+            <div class="col-4 home-feed-wrapper mb-5">
+              <%= link_to (image_tag p.image_url, class: "img-home-post"), p %> 
+            </div>
+          <% end %>
+        <% end %>
+        <div class="col-4"></div>
+        <div class="col-4"></div>
+      </div>
+    </div>
 
         <!-- if not signed in -->
-    <% else %>
-        <h1>Welcome to Eggorkegramm</h1>
-        <p>Please Log in or signup before using this awesome app</p>
-    <% end %>
+  <% else %>
+    <h1>Welcome to Eggorkegramm</h1>
+    <p>Please Log in or signup before using this awesome app</p>
+  <% end %>
 </div>
     

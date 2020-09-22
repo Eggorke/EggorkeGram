@@ -2,40 +2,26 @@
 <%= form_for @post do |f| %>
 
     
-        <div class="row center img-feed-wrapper center">
-            <%= image_tag @post.image_url, :class => "img-post-feed" %>
-        </div>
+<div class="row center img-feed-wrapper center">
+  <%= image_tag @post.image_url, :class => "img-post-feed" %>
+</div>
 
-        <div class="row center">
-        <div class="text-left border-bottom"><%= link_to @post.user.name, @post.user, :class => "user-link" %> <%= @post.title %></div>
-            
-            
-        </div>
+<div class="row center">
+  <div class="text-left border-bottom"><%= link_to @post.user.name, @post.user, :class => "user-link" %> <%= @post.title %></div>            
+</div>
 
-        <div class="row mt-2 mb-2">
-            <%= f.text_field :title, :class=>"text-field" %>
-        </div>
+<div class="row mt-2 mb-2">
+  <%= f.text_field :title, :class=>"text-field" %>
+</div>
 
-        <div class="row center">
-            <%= f.file_field :image %>
-            <%= f.hidden_field :image, value: @post.cached_image_data %>
-    
-    
-        </div>
-        <div class="row mt-5">
-            <div class="col"><%= f.submit "Update post" ,:class => "btn btn-success" %></div>
-            <div class="col"><%= link_to "Delete post", @post, method: :delete, data: {confirm: "Are you sure?"}, :class => "btn btn-danger" %></div>
-        </div>
-
-
-
-    
-
-    
-    
-
-    
-
+<div class="row center">
+  <%= f.file_field :image %>
+  <%= f.hidden_field :image, value: @post.cached_image_data %>    
+</div>
+<div class="row mt-5">
+  <div class="col"><%= f.submit "Update post" ,:class => "btn btn-success" %></div>
+  <div class="col"><%= link_to "Delete post", @post, method: :delete, data: {confirm: "Are you sure?"}, :class => "btn btn-danger" %></div>
+</div>
     
 <% end %>
 </div>

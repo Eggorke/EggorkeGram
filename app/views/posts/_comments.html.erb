@@ -1,10 +1,10 @@
 <div class="container-flex">
     
-    <% p.commentary.each do |c| %>
-        <div class="flex-item">
-            <%= link_to c.user.name, c.user, :class => "user-link" %>
-            <%= c.commentary_text %>
-        </div>
-    <%end %>
+  <% p.commentary.each do |c| %>
+  <div class="flex-item">
+    <%= link_to c.user.name, c.user, :class => "user-link" %>
+    <%= c.commentary_text %>
+  </div>
+  <%end %>
 
 </div>

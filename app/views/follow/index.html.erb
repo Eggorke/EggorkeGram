@@ -1,24 +1,26 @@
 <div class="container mt-5 content">
-    <div class="row">
-        <div class="col-6 ">
-            <p class="font-22">Followings:</p>
+  <div class="row">
+    <div class="col-6 ">
+      <p class="font-22">Followings:</p>
             
-            <% @following.each do |f| %>
-            <div class="mb-2">
-                <%= link_to f.name, f , :class => "user-link"%>
-                <%= render 'follow/unfollow', f:f%>
-            </div>
-            <% end %>
+      <% @following.each do |f| %>
+      <div class="mb-2">
+        <%= link_to f.name, f , :class => "user-link"%>
+        <%= render 'follow/unfollow', f:f%>
+      </div>
+      <% end %>
             
-            <%= will_paginate @following, :page_links => false, :class => "apple_pagination" %>
-        </div>
-        <div class="col-6 ">
-            <p class="font-22">Followers:</p>
-            <% @followers.each do |f| %>
-                <div class="mb-2">
-                    <%= link_to f.name, f, :class => "user-link" %>
-                </div>
-            <% end %> 
-        </div>
+      <%= will_paginate @following, :page_links => false, :class => "apple_pagination" %>
+        
+        
     </div>
+    <div class="col-6 ">
+      <p class="font-22">Followers:</p>
+      <% @followers.each do |f| %>
+      <div class="mb-2">
+        <%= link_to f.name, f, :class => "user-link" %>
+      </div>
+      <% end %> 
+    </div>
+  </div>
 </div>
