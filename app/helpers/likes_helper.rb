@@ -1,14 +1,13 @@
-module LikesHelper
+# frozen_string_literal: true
 
+module LikesHelper
   def post_already_liked(post)
     aim = Like.find_by(post_id: post.id, user_id: current_user.id)
 
     if aim
-      return false
+      false
     else
-      return true
+      true
     end
-        
   end
-
 end

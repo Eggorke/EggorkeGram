@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FollowController < ApplicationController
   include(FollowHelper)
   before_action :user_signed_in?
@@ -20,9 +22,8 @@ class FollowController < ApplicationController
     unfollow_aim_user = User.find(params[:unfollow_id])
 
     if current_user.stop_following(unfollow_aim_user)
-      flash[:success] = "You have unfollowed"
+      flash[:success] = 'You have unfollowed'
       basic_redirect
     end
   end
-
 end

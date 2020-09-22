@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CommentariesController < ApplicationController
   before_action :user_signed_in?
   before_action :redirect_if_not_log_in
@@ -9,16 +11,13 @@ class CommentariesController < ApplicationController
     end
   end
 
-  #def show
-  #@commentary = Commentary.all(params[post_id])
-  #end
+  # def show
+  # @commentary = Commentary.all(params[post_id])
+  # end
 
   private
 
   def comment_params
     params.require(:commentary).permit(:commentary_text, :post_id, :user_id)
   end
-
-
 end
-

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -9,18 +11,15 @@ class User < ApplicationRecord
                     tsearch: { prefix: true }
                   }
 
-
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  
+
   has_many :posts, dependent: :destroy
   has_many :commentary, dependent: :destroy
   has_many :likes, dependent: :destroy
 
-  validates :name, presence: true #, uniqueness: true
-  
+  validates :name, presence: true # , uniqueness: true
+
   acts_as_followable
   acts_as_follower
-
-
 end

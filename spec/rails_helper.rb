@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'simplecov'
 SimpleCov.start 'rails'
@@ -6,7 +8,7 @@ require 'support/factory_bot'
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)
 # Prevent database truncation if the environment is production
-abort("The Rails environment is running in production mode!") if Rails.env.production?
+abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -34,21 +36,12 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 
-
-
-#It helps RSPEC to redirect to request referer while testing controllers
-#Долго гуглил... но нагуглил ^_^ иначе не возвращает request referer из контроллера
+# It helps RSPEC to redirect to request referer while testing controllers
+# Долго гуглил... но нагуглил ^_^ иначе не возвращает request referer из контроллера
 
 def referer_redirect_rspec
   request.env['HTTP_REFERER'] = 'http://localhost:3000'
 end
-
-
-
-
-
-
-
 
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
@@ -88,7 +81,4 @@ RSpec.configure do |config|
       with.library :rails
     end
   end
-
 end
-
-
