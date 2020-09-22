@@ -1,8 +1,8 @@
 env:
-  RUBY_VERSION: 2.4
-  POSTGRES_USER: postgres
-  POSTGRES_PASSWORD: postgres
-  POSTGRES_DB: postgres
+  RUBY_VERSION: 2.7.1
+  POSTGRES_USER: eggorkegram
+  POSTGRES_PASSWORD: 'blackass230792'
+  POSTGRES_DB: eggorkegram_test
 
 name: Rails tests
 on: [push,pull_request]
