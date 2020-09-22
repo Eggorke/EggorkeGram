@@ -5,18 +5,17 @@ class LikesController < ApplicationController
   before_action :user_signed_in?
 
   def like
-    @like = Like.new(like_params)
-
-    if @like.save
+    if LikeManager.new(like_params).put_like
       flash[:success] = 'You like it'
       basic_redirect
     end
   end
 
   def unlike
-    Like.find_by(like_params).destroy
-    basic_redirect
-    flash[:danger] = 'You have disliked it'
+    if LikeManager.new(like_params).put_unlike
+      basic_redirect
+      flash[:danger] = 'You have disliked it'
+    end
   end
 
   private

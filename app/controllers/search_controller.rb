@@ -5,6 +5,6 @@ class SearchController < ApplicationController
   before_action :redirect_if_not_log_in
 
   def search
-    @searched_users = User.find_by_name(params[:name])
+    @searched_users = SearchManager.new(params[:name]).call
   end
 end

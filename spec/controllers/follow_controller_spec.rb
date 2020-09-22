@@ -11,7 +11,7 @@ RSpec.describe FollowController, type: :controller do
 
   describe '#follow_user' do
     let!(:user_to_follow) { create :user }
-    let(:params) { { follow_id: user_to_follow }}
+    let(:params) { { follow_id: user_to_follow } }
     subject { post :follow_user, params: params }
 
     it 'should redirect to request referer after follow user' do
@@ -22,21 +22,21 @@ RSpec.describe FollowController, type: :controller do
 
     it 'should change Follow by +1' do
       referer_redirect_rspec
-      expect { subject }.to change {Follow.count}.by(1)
+      expect { subject }.to change { Follow.count }.by(1)
     end
   end
 
   describe '#unfollow_user' do
     context 'allow to unfollow other users' do
       let!(:user_to_follow) { create :user }
-      let(:params_to_follow) {{ follow_id: user_to_follow }}
+      let(:params_to_follow) { { follow_id: user_to_follow } }
 
       before do
         referer_redirect_rspec
         post :follow_user, params: params_to_follow
       end
 
-      let(:params_to_unfollow) {{ unfollow_id: user_to_follow }}
+      let(:params_to_unfollow) { { unfollow_id: user_to_follow } }
       subject { post :unfollow_user, params: params_to_unfollow }
 
       it 'should redirect to referer after unfollow user' do
@@ -47,7 +47,7 @@ RSpec.describe FollowController, type: :controller do
 
       it 'should change Follow by -1' do
         referer_redirect_rspec
-        expect { subject }.to change {Follow.count}.by(-1)
+        expect { subject }.to change { Follow.count }.by(-1)
       end
     end
   end
