@@ -7,9 +7,9 @@
 
 env:
   RUBY_VERSION: 2.7.1
-  POSTGRES_USER: postgres
-  POSTGRES_PASSWORD: ""
-  POSTGRES_DB: postgres
+  POSTGRES_USER: eggorkegram
+  POSTGRES_DB: eggorkegram_test
+  POSTGRES_PASSWORD: "blackass230792"
 
 name: Rails tests
 on: [push,pull_request]
@@ -20,11 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       postgres:
-        image: postgres:latest
-        env:
-          POSTGRES_USER: eggorkegram
-          POSTGRES_DB: eggorkegram_test
-          POSTGRES_PASSWORD: "blackass230792"
+        image: postgres:latest          
         ports: ["5432:5432"]
 
     steps:
