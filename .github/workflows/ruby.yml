@@ -1,3 +1,4 @@
+
 name: Rails tests
 on: [push,pull_request]
 jobs:

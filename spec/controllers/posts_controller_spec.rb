@@ -110,7 +110,7 @@ RSpec.describe PostsController, type: :controller do
 
     subject { process :update, method: :put, params: params }
 
-    it { is_expected.to redirect_to(post_path(post.id))}
+    it { is_expected.to redirect_to(root_path)}
 
     it 'update post' do
       expect {subject}.to change { post.reload.title }.to('some title')

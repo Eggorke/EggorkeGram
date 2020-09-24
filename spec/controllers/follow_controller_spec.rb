@@ -53,8 +53,8 @@ RSpec.describe FollowController, type: :controller do
   end
 
   describe '#index' do
-    let!(:user_follower) {create :user}
-    let!(:user_following) {create :user}
+    let!(:user_follower) { create :user }
+    let!(:user_following) { create :user}
     let(:params_to_follow) {{ follow_id: user_following.id }}
 
     # current user follow user_following, but user_follower follow current_user
