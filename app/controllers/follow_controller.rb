@@ -4,26 +4,29 @@ class FollowController < ApplicationController
   include(FollowHelper)
   before_action :user_signed_in?
   before_action :redirect_if_not_log_in
+  before_action :create_manager
   def index
-    @following = current_user.following_users.paginate(page: params[:page], per_page: 10)
-    @followers = current_user.followers
+    @following = @manager.get_followings.paginate(page: params[:page], per_page: 10)
+    @followers = @manager.get_followers
   end
 
   def follow_user
-    follow_aim_user = User.find(params[:follow_id])
-
-    if current_user.follow(follow_aim_user)
+    if @manager.follow(params[:follow_id])
       flash[:success] = 'You have followed'
       basic_redirect
     end
   end
 
   def unfollow_user
-    unfollow_aim_user = User.find(params[:unfollow_id])
-
-    if current_user.stop_following(unfollow_aim_user)
+    if @manager.unfollow(params[:unfollow_id])
       flash[:success] = 'You have unfollowed'
       basic_redirect
     end
+  end
+
+  private
+
+  def create_manager
+    @manager = FollowManager.new(current_user)
   end
 end

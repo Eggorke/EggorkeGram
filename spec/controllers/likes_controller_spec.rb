@@ -12,7 +12,7 @@ RSpec.describe LikesController, type: :controller do
   describe '#like' do
     let!(:post) { create :post }
     let(:params) {{ user_id: user, post_id: post }}
-    subject { get :like, params: params }
+    subject { process :like, method: :post, params: params }
 
     it 'should redirect to request referer after putting LIKE' do
       referer_redirect_rspec
