@@ -29,7 +29,7 @@ gem 'mini_magick', '>= 4.3.5'
 gem 'pg'
 gem 'pg_search'
 gem 'rubocop-rails', require: false
-gem 'shrine', '~> 3.0'
+gem 'shrine', '~> 3.3'
 gem 'will_paginate', '~> 3.1.0'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
